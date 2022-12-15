@@ -1,6 +1,6 @@
 # Express Helper
 
-# Express Helper Configure Options
+## Express Helper Configure Options
 
 ```typescript
 interface TExpressHelperConfig {
@@ -20,7 +20,15 @@ interface TExpressHelperConfig {
 }
 ```
 
-# Create a HTTP Server
+```typescript
+interface THttpsExpressHelperConfig extends TExpressHelperConfig {
+  private_key: string
+  certificate: string
+  pass_phrase: string
+}
+```
+
+## Create a HTTP Server
 
 ```typescript
 import expressHelper from "express-helper"
