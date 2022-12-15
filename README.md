@@ -4,8 +4,8 @@
 
 ```typescript
 interface TExpressHelperConfig {
-  // Express App to be used by http helper
-  // if not defined a Express App to be used, it will create a new instance
+  // Express App to be used by http helper if not defined a Express App to be used, Express Helper 
+  // will create a new instance
   app?: express.Application
   
   // The port that will be used by the server, 
