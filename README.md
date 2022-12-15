@@ -14,9 +14,9 @@ All properties mentioned above also apply to HTTPS server configurations.
 
 | Property    | Required           | Description   |
 |-------------|:------------------:|:--------------|
-| private_key | :heavy_check_mark: |               |
-| certificate | :heavy_check_mark: |               |
-| pass_phrase |         :x:        |               |
+| private_key | :heavy_check_mark: | ????              |
+| certificate | :heavy_check_mark: | ????              |
+| pass_phrase |         :x:        | ????              |
 
 ## Create a HTTP/HTTPS Server
 
@@ -36,4 +36,13 @@ const app = express()
 
 expressHelper.http({ app })
 expressHelper.https({ app })
+```
+
+## Automatic load express.Routers and express.Handlers
+
+```typescript
+import expressHelper, { globRouterLoader } from "express-helper"
+const routes = [ globRouterLoader("./routes/**/*.routes.ts") ]
+expressHelper.http({ routes })
+expressHelper.https({ routes })
 ```
