@@ -28,9 +28,20 @@ interface THttpsExpressHelperConfig extends TExpressHelperConfig {
 }
 ```
 
-## Create a HTTP Server
+## Create a HTTP/HTTPS Server
 
 ```typescript
 import expressHelper from "express-helper"
 expressHelper.http()
+expressHelper.https()
+```
+
+## Create a HTTP/HTTPS Server Sharing same express.Application
+
+```typescript
+import expressHelper from "express-helper"
+import express from "express"
+const app = express()
+expressHelper.http({ app })
+expressHelper.https({ app })
 ```
