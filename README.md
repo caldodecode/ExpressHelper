@@ -15,8 +15,9 @@ interface TExpressHelperConfig {
   // HTTPS_PORT when not set, and defaults to 443 when no other value is found.
   port?: number
   
-  //
-  routes?: (express.Router | string)[]
+  // Array that contains express.Router or express.Handler, so that it is possible to create application routes 
+  // and/or create middlewares.
+  routes?: (express.Router | express.Handler)[]
 }
 ```
 
@@ -41,7 +42,9 @@ expressHelper.https()
 ```typescript
 import expressHelper from "express-helper"
 import express from "express"
+
 const app = express()
+
 expressHelper.http({ app })
 expressHelper.https({ app })
 ```
